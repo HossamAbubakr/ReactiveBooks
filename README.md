@@ -16,7 +16,7 @@
 
 ## Summary
 
-Reactive Books is a bookshelf app built using ReactJs that I built to practice front end programming and React.JS as part of my udacity nanodegree.
+Reactive Books is a bookshelf app built using ReactJs that I built to practice front end programming and React.JS as part of my **React Nanodegree from Udacity**.
 
 It uses a NodeJs server hosted by Udacity as a backend to retrieve Google books data, and has a sleek and modern design.
 
