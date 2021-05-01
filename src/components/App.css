@@ -1,0 +1,437 @@
+* {
+  cursor: url("/cursors/arrow.png"), default;
+}
+html,
+body,
+.root {
+  height: 100%;
+}
+/* main page */
+.no-books {
+  font-size: large;
+  padding-top: 50px;
+}
+p,
+input {
+  cursor: url("/cursors/beam.png"), text;
+}
+
+.app {
+  position: relative;
+}
+
+.bookshelf {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 3px 8px -2px rgb(0 0 0 / 20%);
+  margin-bottom: 30px;
+}
+
+.bookshelf-title {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 3px 8px -4px rgb(0 0 0 / 20%);
+  padding: 5px;
+  color: mediumpurple;
+}
+
+.list-books-title {
+  background: rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.list-books-title h1 {
+  display: inline;
+  font-weight: 400;
+  color: white;
+}
+.list-books-title .logo {
+  display: inline;
+  margin: 0;
+  /*animation: App-logo-spin infinite 20s linear;*/
+  height: 60px;
+}
+
+.search-no-books {
+  text-align: center;
+  vertical-align: center;
+  padding-top: 10%;
+}
+.search-no-books .intro {
+  font-size: 25px;
+}
+.search-no-books .categories {
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+h2 {
+  padding-bottom: 7px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.bookshelf-title {
+  margin: 0;
+  padding: 5px;
+  text-decoration: underline;
+}
+.list-books-content {
+  text-align: center;
+  padding: 0 0 80px;
+  flex: 1;
+}
+.list-books-content .tip {
+  font-size: large;
+  text-decoration: underline;
+  cursor: url("/cursors/arrow.png"), default;
+  color: #61526d;
+}
+
+.close-modal {
+  border: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
+/* Modal example was found on w3schools */
+.book-view-modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.book-view {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #282828;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  max-width: 600px;
+}
+
+.book-view .header {
+  margin: 15px 0 10px 0;
+  height: 30px;
+  text-align: center;
+}
+
+.book-view .header h3 {
+  vertical-align: text-top;
+  text-align: center;
+  display: inline;
+}
+
+.book-view #close-button {
+  float: left;
+  width: 30px;
+  cursor: url("/cursors/hand.png"), pointer;
+}
+
+@media (min-width: 600px) {
+  .book-view {
+    padding: 0 20px 40px;
+  }
+}
+
+.book-view-title {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  border-bottom: 1px solid #dedede;
+}
+.book-description {
+  display: block; /* or inline-block */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 3.6em;
+  line-height: 1.8em;
+}
+
+.book-view-details {
+  display: flex;
+  text-align: center;
+}
+.book-view-details img {
+  margin: 20px 20px 0 20px;
+}
+
+.book-cover-rating img {
+  margin: auto;
+  margin-top: 22px;
+  display: block;
+}
+
+.book-cover-rating .book-rating {
+  margin-top: 15px;
+}
+
+.book-information {
+  line-height: 30px;
+  padding-left: 20px;
+  display: block;
+}
+.book-information p {
+  line-height: 30px;
+  margin: 0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.book-information p:first-of-type {
+  margin: 15px 0 0 0;
+}
+.book-information .book-maturity {
+  margin: 0;
+  text-transform: capitalize;
+}
+.book-information .book-language {
+  text-transform: uppercase;
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+.open-search {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+}
+.open-search a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  background-image: url("../icons/add.svg");
+  cursor: url("/cursors/hand.png"), pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  font-size: 0;
+  outline: 0;
+  border-color: transparent;
+}
+
+.open-search button:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Gradient Background */
+/* The code is by Manuel Pinto  */
+/* I got the code from https://csshint.com/ */
+body {
+  background-color: #a9c9ff;
+  background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  /*background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  animation: gradient 15s ease infinite;*/
+  margin: 0;
+  font-family: "Merriweather", serif;
+  color: #fff;
+  line-height: 1.5;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* search page */
+
+.search-books {
+  color: #6e6575;
+}
+
+.search-books-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
+}
+
+.search-books-input-wrapper {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-books-bar input {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 1.25em;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #6e6575;
+}
+.search-books-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.close-search {
+  display: block;
+  top: 20px;
+  left: 15px;
+  width: 50px;
+  height: 53px;
+  background-image: url("../icons/arrow-back.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28px;
+  font-size: 0;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.search-books-results {
+  padding: 80px 10px 20px;
+}
+
+.search-books-input-wrapper input::placeholder {
+  color: #6e6575;
+}
+
+/* books grid */
+
+.books-grid {
+  list-style-type: none;
+  padding: 10px 0 10px 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.books-grid li {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.book {
+  width: 140px;
+}
+
+.book-title,
+.book-authors {
+  font-size: 0.8em;
+}
+
+.book-title {
+  margin-top: 10px;
+  color: #6e6575;
+  font-weight: 600;
+}
+
+.book-authors {
+  color: white;
+  text-decoration: underline;
+  color: #8b8192;
+}
+
+.book-top {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.book-shelf-changer {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  background-image: url("../icons/arrow-drop-down.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.book-shelf-changer select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: url("/cursors/hand.png"), pointer;
+}
+
+/* book cover */
+
+.book-top > .book-cover {
+  /* Only show the expand cursor on the cover outside the extended book view */
+  cursor: url("/cursors/expand.png"), crosshair;
+}
+.book-cover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background: transparent;
+}
+
+.book-cover-title {
+  padding: 20px 10px 0;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+/* =================================== */
+/*                Footer               */
+/* =================================== */
+
+.footer {
+  display: flex;
+  border-top: 1px solid #ffebeb;
+  background: rgba(255, 255, 255, 0.1);
+  height: 55px;
+  width: 100%;
+  /*position: absolute;*/
+  bottom: 0;
+  z-index: -1;
+  color: #5f5f5f;
+}
+
+.footer p {
+  padding-left: 15px;
+}
+
+.footer p + p {
+  font-weight: 600;
+}
+
+.footer a {
+  align-self: center;
+}
+
+.footer img {
+  cursor: url(/cursors/hand.png), pointer;
+  padding-left: 10px;
+  height: 20px;
+}
