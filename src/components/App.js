@@ -18,7 +18,7 @@ class BooksApp extends React.Component {
   changeShelf = (book, newShelf) => {
     BooksAPI.update(book, newShelf);
     book.shelf = newShelf; //Update the book locally
-    const books = this.state.books.filter((bo) => bo.id !== book.id).concat(book); // Spread the books, filter out the book we wanna change, update its shelf then concat it to the list
+    const books = this.state.books.filter((bo) => bo.id !== book.id).concat(book); // Filter out the book we wanna change, update its shelf then concat it to the list
     this.setState({ books });
   };
 
