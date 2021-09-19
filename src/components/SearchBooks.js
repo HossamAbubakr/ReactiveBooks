@@ -5,30 +5,27 @@ import { Link } from "react-router-dom";
 class SearchBooks extends Component {
   state = {
     books: [],
-    typingTimeout: 0,
   };
+  typingTimeout = 0;
   Handlesearch = (event) => {
     const { value } = event.target;
-
-    clearTimeout(this.state.typingTimeout);
-    this.setState({
-      typingTimeout: setTimeout(async () => {
-        try {
-          if (value.trim()) {
-            const books = await BooksAPI.search(value);
-            if (books === undefined || "error" in books) {
-              this.setState({ books: [] }); // Set the search page as blank so its shows the search terms again
-            } else {
-              this.setState({ books: books });
-            }
+    clearTimeout(this.typingTimeout);
+    this.typingTimeout = setTimeout(async () => {
+      try {
+        if (value.trim()) {
+          const books = await BooksAPI.search(value);
+          if (books === undefined || "error" in books) {
+            this.setState({ books: [] }); // Set the search page as blank so its shows the search terms again
           } else {
-            this.setState({ books: [] });
+            this.setState({ books: books });
           }
-        } catch (error) {
-          console.log(`Error: ${error}`);
+        } else {
+          this.setState({ books: [] });
         }
-      }, 500),
-    });
+      } catch (error) {
+        console.log(`Error: ${error}`);
+      }
+    }, 500);
   };
   render() {
     const { onShelfChange, books } = this.props;
